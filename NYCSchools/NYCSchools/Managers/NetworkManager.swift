@@ -17,11 +17,8 @@ class NetworkManager {
     private let logger = Logger(label: Bundle.main.displayName ?? StringConstants.appName.rawValue)
     var anyCancellables : Set<AnyCancellable> = Set<AnyCancellable>()
     
-    static let shared = NetworkManager()
-    private init(){}
-    
     // MARK: - Computed Properties
-
+    
     private var jsonDecoder: JSONDecoder {
         let decoder = JSONDecoder()
         //decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -29,7 +26,7 @@ class NetworkManager {
     }
     
     // MARK: - Functions
-
+    
     // Using Completion Handlers Result type of enum type T and Error
     func makeGetRequest<T:Decodable>(url: URL, type: T.Type, completionHandler: @escaping(Result<T, Error>) -> Void){
         let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
@@ -64,12 +61,12 @@ class NetworkManager {
         return Future<T, Error> { promise in
             URLSession.shared.dataTaskPublisher(for: url)
                 .tryMap() { element -> Data in
-                      guard let httpResponse = element.response as? HTTPURLResponse,
-                            (200...299).contains(httpResponse.statusCode) else {
-                              throw URLError(.badServerResponse)
-                          }
-                      return element.data
-                 }
+                    guard let httpResponse = element.response as? HTTPURLResponse,
+                          (200...299).contains(httpResponse.statusCode) else {
+                        throw URLError(.badServerResponse)
+                    }
+                    return element.data
+                }
                 .decode(type: T.self, decoder: self.jsonDecoder)
                 .receive(on: DispatchQueue.main)
                 .sink(receiveCompletion: { completion in
@@ -81,24 +78,24 @@ class NetworkManager {
         }
     }
     
-//    func simplifyJSONDecodingError<T:Decodable>(type: T.Type, data: Data) -> NetworkingError {
-//        var errorMessage:String = ""
-//        do {
-//            let parsedDataClass: T = try self.jsonDecoder.decode(type, from: data)
-//        } catch let DecodingError.dataCorrupted(context) {
-//            errorMessage = context.debugDescription
-//        } catch let DecodingError.keyNotFound(key, context) {
-//            let errorMessage = "Key :\(key) not found: \(context.debugDescription)"
-//        } catch let DecodingError.valueNotFound(value, context) {
-//            errorMessage = "Value :\(value) not found: \(context.debugDescription)"
-//        } catch let DecodingError.typeMismatch(type, context)  {
-//            errorMessage = "Type :\(type) mismatch: \(context.debugDescription)"
-//        } catch {
-//            errorMessage = error.localizedDescription
-//        }
-//    defer {
-//            self.logger.e(errorMessage)
-//            completionHandler(Result.failure(NetworkingError.jsonParserError(errorMessage)))
-//        }
-//    }
+    //    func simplifyJSONDecodingError<T:Decodable>(type: T.Type, data: Data) -> NetworkingError {
+    //        var errorMessage:String = ""
+    //        do {
+    //            let parsedDataClass: T = try self.jsonDecoder.decode(type, from: data)
+    //        } catch let DecodingError.dataCorrupted(context) {
+    //            errorMessage = context.debugDescription
+    //        } catch let DecodingError.keyNotFound(key, context) {
+    //            let errorMessage = "Key :\(key) not found: \(context.debugDescription)"
+    //        } catch let DecodingError.valueNotFound(value, context) {
+    //            errorMessage = "Value :\(value) not found: \(context.debugDescription)"
+    //        } catch let DecodingError.typeMismatch(type, context)  {
+    //            errorMessage = "Type :\(type) mismatch: \(context.debugDescription)"
+    //        } catch {
+    //            errorMessage = error.localizedDescription
+    //        }
+    //    defer {
+    //            self.logger.e(errorMessage)
+    //            completionHandler(Result.failure(NetworkingError.jsonParserError(errorMessage)))
+    //        }
+    //    }
 }

@@ -33,11 +33,10 @@ class SchoolsViewController: UITableViewController {
         showNavigationController(hidden: false)
         fetchMoreSchools()
     }
-        
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.tableView.contentInset = UIEdgeInsets(top: -40, left: 0, bottom: 0, right: 0);
-
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -49,6 +48,8 @@ class SchoolsViewController: UITableViewController {
         }
     }
     
+    // MARK: Helper Methods
+    
     func addSubscriptions() {
         // Subscribe to schools array from view model
         schoolsViewModel.$schools
@@ -58,7 +59,7 @@ class SchoolsViewController: UITableViewController {
                 self.schoolsTable?.reloadData()
             })
             .store(in: &anyCancellables)
-         
+        
         // Subscribe to error message from view model
         schoolsViewModel.$alertErrorMessage
             .receive(on: DispatchQueue.main)
@@ -86,7 +87,7 @@ class SchoolsViewController: UITableViewController {
         isLoadingList = false
         hideLoader()
     }
-
+    
 }
 
 // MARK: Table View Delegate and Datasource methods
@@ -107,11 +108,11 @@ extension SchoolsViewController {
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-
-          if (((scrollView.contentOffset.y + scrollView.frame.size.height) > scrollView.contentSize.height ) && !isLoadingList){
-              offset = offset + IntegerConstants.defaultPaginationBatchSize.rawValue
-              fetchMoreSchools()
-          }
+        // Fetch more rows once user has scrolled outside the contentSize
+        if (((scrollView.contentOffset.y + scrollView.frame.size.height) > scrollView.contentSize.height ) && !isLoadingList){
+            offset = offset + IntegerConstants.defaultPaginationBatchSize.rawValue
+            fetchMoreSchools()
+        }
     }
 }
 

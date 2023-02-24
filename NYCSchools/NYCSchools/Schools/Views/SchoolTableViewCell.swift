@@ -21,6 +21,8 @@ class SchoolTableViewCell: UITableViewCell {
     
     @Published var school: School?
     
+    // MARK: Life Cycle Functions
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         

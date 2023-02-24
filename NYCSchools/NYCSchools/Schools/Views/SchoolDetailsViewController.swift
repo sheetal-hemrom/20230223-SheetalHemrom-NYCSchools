@@ -22,11 +22,17 @@ class SchoolDetailsViewController: UIViewController {
     @IBOutlet var schoolOverview:UILabel?
     @IBOutlet var scoreStackView:UIStackView?
     @IBOutlet var interactiveTextField:UITextField?
-
+    
+    // MARK: Life Cycle Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        addSubscriptions()
+    }
+    
+    // MARK: Helper Functions
+    
+    func addSubscriptions(){
         // Subscribe to school obj from view model
         schoolDetailViewModel.$school
             .receive(on: DispatchQueue.main)
@@ -84,8 +90,8 @@ class SchoolDetailsViewController: UIViewController {
                 }
             })
             .store(in: &anyCancellables)
-        
     }
+    
     
     func renderAttributedStringForScore(scoreValue: String, label: UILabel) {
         label.attributedText = label.attributedText?.replacing(placeholder: "<value>", with: scoreValue)
@@ -97,7 +103,7 @@ class SchoolDetailsViewController: UIViewController {
         self.interactiveTextField?.attributedText = attributedString
     }
 }
-
+// MARK: Extensions
 extension SchoolDetailsViewController: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
         UIApplication.shared.open(URL)

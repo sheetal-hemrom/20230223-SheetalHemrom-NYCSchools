@@ -34,6 +34,24 @@
 		13209F6D29A80716005D123F /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13209F6C29A80716005D123F /* UIViewControllerExtension.swift */; };
 		13EE5A7529A8C56000C9779E /* NSAttributedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EE5A7429A8C56000C9779E /* NSAttributedStringExtension.swift */; };
 		13EE5A7A29A8ECA100C9779E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EE5A7929A8ECA100C9779E /* StringExtension.swift */; };
+		13EE5A7E29A92F4200C9779E /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13209F2029A7E194005D123F /* School.swift */; };
+		13EE5A8229A92F4500C9779E /* SchoolScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13209F2529A7E780005D123F /* SchoolScore.swift */; };
+		13EE5A8629A92F4800C9779E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13209F3429A7E93B005D123F /* Constants.swift */; };
+		13EE5A8A29A92F4B00C9779E /* BundleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13209F4229A7EF29005D123F /* BundleExtensions.swift */; };
+		13EE5A8E29A92F4E00C9779E /* LoggerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13209F4729A7F4B5005D123F /* LoggerExtension.swift */; };
+		13EE5A9229A92F5300C9779E /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13209F6C29A80716005D123F /* UIViewControllerExtension.swift */; };
+		13EE5A9629A92F5500C9779E /* NSAttributedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EE5A7429A8C56000C9779E /* NSAttributedStringExtension.swift */; };
+		13EE5A9A29A92F5800C9779E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EE5A7929A8ECA100C9779E /* StringExtension.swift */; };
+		13EE5A9E29A92F5C00C9779E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13209F2B29A7E82F005D123F /* NetworkManager.swift */; };
+		13EE5AA229A92F6300C9779E /* SchoolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13209EE729A7D655005D123F /* SchoolsViewController.swift */; };
+		13EE5AA629A92F6700C9779E /* SchoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13209F6729A80517005D123F /* SchoolTableViewCell.swift */; };
+		13EE5AAA29A92F6C00C9779E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13209EE329A7D655005D123F /* AppDelegate.swift */; };
+		13EE5AAE29A92F6F00C9779E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13209EE529A7D655005D123F /* SceneDelegate.swift */; };
+		13EE5AB329A92FE600C9779E /* SchoolsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EE5AB229A92FE600C9779E /* SchoolsViewModelTests.swift */; };
+		13EE5AB929A9327A00C9779E /* URLSessionDataTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EE5AB829A9327A00C9779E /* URLSessionDataTaskMock.swift */; };
+		13EE5AC129A932B900C9779E /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EE5AC029A932B900C9779E /* URLSessionMock.swift */; };
+		13EE5AC629A9332800C9779E /* NetworkManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EE5AC529A9332800C9779E /* NetworkManagerMock.swift */; };
+		13EE5ADD29A9429E00C9779E /* SchoolDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EE5ADC29A9429E00C9779E /* SchoolDetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +100,11 @@
 		13209F6C29A80716005D123F /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		13EE5A7429A8C56000C9779E /* NSAttributedStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringExtension.swift; sourceTree = "<group>"; };
 		13EE5A7929A8ECA100C9779E /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		13EE5AB229A92FE600C9779E /* SchoolsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsViewModelTests.swift; sourceTree = "<group>"; };
+		13EE5AB829A9327A00C9779E /* URLSessionDataTaskMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionDataTaskMock.swift; sourceTree = "<group>"; };
+		13EE5AC029A932B900C9779E /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
+		13EE5AC529A9332800C9779E /* NetworkManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerMock.swift; sourceTree = "<group>"; };
+		13EE5ADC29A9429E00C9779E /* SchoolDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolDetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,8 +172,11 @@
 		13209EF929A7D657005D123F /* NYCSchoolsTests */ = {
 			isa = PBXGroup;
 			children = (
+				13EE5AB729A9326300C9779E /* Mocks */,
 				13209EFA29A7D657005D123F /* NYCSchoolsTests.swift */,
 				13209EFC29A7D657005D123F /* Info.plist */,
+				13EE5AB229A92FE600C9779E /* SchoolsViewModelTests.swift */,
+				13EE5ADC29A9429E00C9779E /* SchoolDetailsViewModel.swift */,
 			);
 			path = NYCSchoolsTests;
 			sourceTree = "<group>";
@@ -222,6 +248,16 @@
 				13EE5A7929A8ECA100C9779E /* StringExtension.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		13EE5AB729A9326300C9779E /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				13EE5AB829A9327A00C9779E /* URLSessionDataTaskMock.swift */,
+				13EE5AC029A932B900C9779E /* URLSessionMock.swift */,
+				13EE5AC529A9332800C9779E /* NetworkManagerMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,11 +420,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13EE5ADD29A9429E00C9779E /* SchoolDetailsViewModel.swift in Sources */,
 				13209F6029A7FDA3005D123F /* URLExtension.swift in Sources */,
+				13EE5A8E29A92F4E00C9779E /* LoggerExtension.swift in Sources */,
+				13EE5AB329A92FE600C9779E /* SchoolsViewModelTests.swift in Sources */,
+				13EE5A7E29A92F4200C9779E /* School.swift in Sources */,
+				13EE5A9629A92F5500C9779E /* NSAttributedStringExtension.swift in Sources */,
+				13EE5A8229A92F4500C9779E /* SchoolScore.swift in Sources */,
+				13EE5AC129A932B900C9779E /* URLSessionMock.swift in Sources */,
 				13209F5429A7FB74005D123F /* SchoolDetailViewModel.swift in Sources */,
 				13209F5A29A7FB8E005D123F /* SchoolDetailsViewController.swift in Sources */,
+				13EE5A8A29A92F4B00C9779E /* BundleExtensions.swift in Sources */,
+				13EE5AB929A9327A00C9779E /* URLSessionDataTaskMock.swift in Sources */,
 				13209F4E29A7FB62005D123F /* SchoolsViewModel.swift in Sources */,
 				13209EFB29A7D657005D123F /* NYCSchoolsTests.swift in Sources */,
+				13EE5A9E29A92F5C00C9779E /* NetworkManager.swift in Sources */,
+				13EE5AC629A9332800C9779E /* NetworkManagerMock.swift in Sources */,
+				13EE5AAE29A92F6F00C9779E /* SceneDelegate.swift in Sources */,
+				13EE5A9229A92F5300C9779E /* UIViewControllerExtension.swift in Sources */,
+				13EE5AA229A92F6300C9779E /* SchoolsViewController.swift in Sources */,
+				13EE5A9A29A92F5800C9779E /* StringExtension.swift in Sources */,
+				13EE5A8629A92F4800C9779E /* Constants.swift in Sources */,
+				13EE5AAA29A92F6C00C9779E /* AppDelegate.swift in Sources */,
+				13EE5AA629A92F6700C9779E /* SchoolTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

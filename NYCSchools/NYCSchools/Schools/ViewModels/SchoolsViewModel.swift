@@ -12,19 +12,27 @@ class SchoolsViewModel {
     
     // MARK: Properties
     
+    let networkManager: NetworkManager?
     @Published var schools: [School] = []
     @Published var alertErrorMessage: String?
-
+    
+    // MARK: Initializers
+    
+    // Injecting NetworkManager for UnitTesting
+    init(networkManager: NetworkManager = NetworkManager()) {
+        self.networkManager = networkManager
+    }
+    
     // MARK: Helper Functions
     
     func fetchSchools(
         limit:Int = IntegerConstants.defaultPaginationBatchSize.rawValue,
         offset:Int = 0) {
         
-        var schoolURL = URL(string: URLs.schoolURL.description)!
+        var schoolURL = StringURLs.schoolURL.url
         schoolURL.appendQueryItem(name: "$limit", value: String(limit))
         schoolURL.appendQueryItem(name: "$offset", value: String(offset))
-        NetworkManager.shared.makeGetRequest(url: schoolURL, type: [School].self) { result in
+        self.networkManager?.makeGetRequest(url: schoolURL, type: [School].self) { result in
             switch result {
             case .success(let schools):
                 self.schools.append(contentsOf: schools)

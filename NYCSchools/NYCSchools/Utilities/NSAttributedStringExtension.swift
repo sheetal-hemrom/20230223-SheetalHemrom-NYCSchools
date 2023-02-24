@@ -19,5 +19,5 @@ extension NSAttributedString {
         }
         return self
     }
-  
+    
 }

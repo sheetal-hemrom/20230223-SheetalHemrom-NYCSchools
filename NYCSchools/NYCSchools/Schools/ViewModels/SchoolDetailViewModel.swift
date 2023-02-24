@@ -12,32 +12,41 @@ import Combine
 class SchoolDetailViewModel {
     
     // MARK: Properties
-
+    
     @Published var schoolScore: SchoolScore?
     @Published var school: School?
     @Published var alertErrorMessage: String?
     
+    
     private let logger = Logger(label: Bundle.main.displayName ?? StringConstants.appName.rawValue)
     var anyCancellables : Set<AnyCancellable> = Set<AnyCancellable>()
-
+    var networkManager: NetworkManager?
+    
+    // MARK: Initializers
+    
+    // Injecting NetworkManager for UnitTesting
+    init(networkManager: NetworkManager = NetworkManager()) {
+        self.networkManager = networkManager
+    }
     
     // MARK: Helper Functions
     
     func fetchSchoolScoreForDbn(dbn: String) {
         
-        let schoolScoreURL = URL(string: URLs.schoolDetailURL(dbn: dbn).description)!
-        NetworkManager.shared.makeGetRequestWithFuture(url: schoolScoreURL, type: [SchoolScore].self)
+        var schoolScoreURL = StringURLs.schoolDetailURL.url
+        schoolScoreURL.appendQueryItem(name: "dbn", value: dbn)
+        self.networkManager?.makeGetRequestWithFuture(url: schoolScoreURL, type: [SchoolScore].self)
             .sink { completion in
                 switch completion {
-                 case .failure(let error):
+                case .failure(let error):
                     self.alertErrorMessage = error.localizedDescription
                 case .finished:
                     self.logger.d("Finished loading score for dbn:\(dbn)")
                 }
             } receiveValue: { scores in
-                    self.schoolScore = scores.count > 0 ? scores.first :  nil
+                self.schoolScore = scores.count > 0 ? scores.first :  nil
             }.store(in: &self.anyCancellables)
     }
-
+    
 }
 

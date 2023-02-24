@@ -7,7 +7,7 @@
 //struct Schools: Decodable {
 //    let schools: [School]
 //}
-struct School: Decodable {
+struct School: Decodable, Equatable {
     
     let dbn: String
     let name: String
@@ -15,7 +15,7 @@ struct School: Decodable {
     let location: String
     let phone_number: String
     let fax_number: String
-    let email: String?
+    let email: String? // email is optional since not all Schools have it
     let website: String
     
     // The keys will be converted to camelCase from the NetworkManager itself so only assign CodingKeys where keys are different

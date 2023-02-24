@@ -12,34 +12,38 @@ public protocol CustomStringConvertible {
     var description: String { get }
 }
 
-enum URLs: CustomStringConvertible {
+enum StringURLs: String {
     case schoolURL
-    case schoolDetailURL(dbn: String)
+    case schoolDetailURL
 }
-extension URLs {
-    var description: String {
+extension StringURLs {
+    var url: URL {
         switch self {
         case .schoolURL:
-            return "https://data.cityofnewyork.us/resource/s3k6-pzi2.json"
-        case .schoolDetailURL(let dbn):
-            return "https://data.cityofnewyork.us/resource/f9bf-2cp4.json?dbn=\(dbn)"
+            return URL(string: "resource/s3k6-pzi2.json", relativeTo: URL(string: StringConstants.baseURL.rawValue)!)!
+        case .schoolDetailURL:
+            return URL(string: "resource/f9bf-2cp4.json", relativeTo: URL(string: StringConstants.baseURL.rawValue)!)!
         }
     }
 }
 
 
 enum StringConstants: String {
+    
+    // MARK: String Constants
     case appName = "NYCSchools"
-    case schoolCellIdentifier = "school_cell"
     case genericError = "Something went wrong! Please try again later"
-    case sequeShowDetail = "showDetail"
     case noScoresMessage = "No scores available!"
+    case baseURL = "https://data.cityofnewyork.us"
+    
+    // MARK: Identifiers
+    case schoolCellIdentifier = "school_cell"
+    case sequeShowDetail = "showDetail"
 }
 
 enum IntegerConstants: Int {
     case defaultPaginationBatchSize = 5
 }
-
 
 
 // NetworkingError with associated values
