@@ -45,7 +45,7 @@ class NetworkManager {
                 if let data = data {
                     guard let parsedDataClass: T = try? self.jsonDecoder.decode(type, from: data) else {
                         self.logger.e("URL session threw parsing error of data")
-                        completionHandler(Result.failure(NetworkingError.responseParseError))
+                        completionHandler(Result.failure(NetworkingError.jsonParserError(error.debugDescription)))
                         return
                     }
                     completionHandler(Result.success(parsedDataClass))
@@ -80,4 +80,25 @@ class NetworkManager {
                 .store(in: &self.anyCancellables)
         }
     }
+    
+//    func simplifyJSONDecodingError<T:Decodable>(type: T.Type, data: Data) -> NetworkingError {
+//        var errorMessage:String = ""
+//        do {
+//            let parsedDataClass: T = try self.jsonDecoder.decode(type, from: data)
+//        } catch let DecodingError.dataCorrupted(context) {
+//            errorMessage = context.debugDescription
+//        } catch let DecodingError.keyNotFound(key, context) {
+//            let errorMessage = "Key :\(key) not found: \(context.debugDescription)"
+//        } catch let DecodingError.valueNotFound(value, context) {
+//            errorMessage = "Value :\(value) not found: \(context.debugDescription)"
+//        } catch let DecodingError.typeMismatch(type, context)  {
+//            errorMessage = "Type :\(type) mismatch: \(context.debugDescription)"
+//        } catch {
+//            errorMessage = error.localizedDescription
+//        }
+//    defer {
+//            self.logger.e(errorMessage)
+//            completionHandler(Result.failure(NetworkingError.jsonParserError(errorMessage)))
+//        }
+//    }
 }

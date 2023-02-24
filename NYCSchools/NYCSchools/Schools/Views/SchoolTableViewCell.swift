@@ -15,19 +15,20 @@ class SchoolTableViewCell: UITableViewCell {
     // MARK: IBOutlets
     
     @IBOutlet var schoolNameLabel: UILabel?
-    @IBOutlet var overViewLabel: UILabel?
+    @IBOutlet var overviewLabel: UILabel?
     
     // MARK: Publishers
     
-    @Published var school_name: String?
+    @Published var school: School?
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        $school_name
+        $school
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { value in
-                self.schoolNameLabel?.text = value
+                self.schoolNameLabel?.text = value?.name
+                self.overviewLabel?.text = value?.overview.trunc(length: 200)
             })
             .store(in: &anyCancellables)
     }

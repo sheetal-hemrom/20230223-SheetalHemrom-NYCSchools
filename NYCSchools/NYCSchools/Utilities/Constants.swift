@@ -33,6 +33,11 @@ enum StringConstants: String {
     case schoolCellIdentifier = "school_cell"
     case genericError = "Something went wrong! Please try again later"
     case sequeShowDetail = "showDetail"
+    case noScoresMessage = "No scores available!"
+}
+
+enum IntegerConstants: Int {
+    case defaultPaginationBatchSize = 5
 }
 
 
@@ -41,6 +46,7 @@ enum StringConstants: String {
 enum NetworkingError: Error {
     case transportError(Error)
     case serverSideError(Int)
+    case jsonParserError(String)
     case responseParseError
     case responseError
 }
@@ -56,6 +62,8 @@ extension NetworkingError: LocalizedError {
             return "Response returned by server is invalid"
         case .responseError:
             return "Server did not return proper response"
+        case .jsonParserError(let message):
+            return "Json parsing failed with error \(message)"
         }
     }
 }

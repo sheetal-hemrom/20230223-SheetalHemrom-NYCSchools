@@ -15,7 +15,7 @@ struct School: Decodable {
     let location: String
     let phone_number: String
     let fax_number: String
-    let email: String
+    let email: String?
     let website: String
     
     // The keys will be converted to camelCase from the NetworkManager itself so only assign CodingKeys where keys are different

@@ -18,18 +18,23 @@ class SchoolDetailsViewController: UIViewController {
     // MARK: IBOutlets
     
     @IBOutlet var schoolName:UILabel?
+    @IBOutlet var noScoresLabel:UILabel?
+    @IBOutlet var schoolOverview:UILabel?
     @IBOutlet var scoreStackView:UIStackView?
+    @IBOutlet var interactiveTextField:UITextField?
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         // Subscribe to school obj from view model
         schoolDetailViewModel.$school
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { school in
                 if let school = school {
                     self.schoolName?.text = school.name
+                    self.schoolOverview?.text = school.overview
+                    self.renderAttributedStringForLinks(website: school.website)
                     self.showLoader()
                     self.schoolDetailViewModel.fetchSchoolScoreForDbn(dbn: school.dbn)
                 }
@@ -42,19 +47,20 @@ class SchoolDetailsViewController: UIViewController {
             .sink(receiveValue: { score in
                 self.hideLoader()
                 if let score = score {
+                    self.noScoresLabel?.text = ""
                     if let stackView = self.scoreStackView {
                         stackView.isHidden = false
                         for (index, element) in stackView.arrangedSubviews.enumerated() {
                             if let label = element as? UILabel {
                                 switch index {
                                 case 0:
-                                    self.renderAttributedString(scoreValue: String(score.num_of_sat_test_takers), label: label)
+                                    self.renderAttributedStringForScore(scoreValue: String(score.num_of_sat_test_takers), label: label)
                                 case 1:
-                                    self.renderAttributedString(scoreValue: String(score.sat_critical_reading_avg_score), label: label)
+                                    self.renderAttributedStringForScore(scoreValue: String(score.sat_critical_reading_avg_score), label: label)
                                 case 2:
-                                    self.renderAttributedString(scoreValue: String(score.sat_math_avg_score), label: label)
+                                    self.renderAttributedStringForScore(scoreValue: String(score.sat_math_avg_score), label: label)
                                 case 3:
-                                    self.renderAttributedString(scoreValue: String(score.sat_writing_avg_score), label: label)
+                                    self.renderAttributedStringForScore(scoreValue: String(score.sat_writing_avg_score), label: label)
                                 default:
                                     break
                                 }
@@ -63,6 +69,7 @@ class SchoolDetailsViewController: UIViewController {
                     }
                 } else {
                     self.scoreStackView?.isHidden = true
+                    self.noScoresLabel?.text = StringConstants.noScoresMessage.rawValue
                 }
             })
             .store(in: &anyCancellables)
@@ -80,7 +87,22 @@ class SchoolDetailsViewController: UIViewController {
         
     }
     
-    func renderAttributedString(scoreValue: String, label: UILabel) {
+    func renderAttributedStringForScore(scoreValue: String, label: UILabel) {
         label.attributedText = label.attributedText?.replacing(placeholder: "<value>", with: scoreValue)
     }
+    
+    func renderAttributedStringForLinks(website: String) {
+        let attributedString = NSMutableAttributedString(string: "Website: ")
+        attributedString.addAttribute(.link, value: website, range: NSRange(location: 0, length: attributedString.length))
+        self.interactiveTextField?.attributedText = attributedString
+    }
 }
+
+extension SchoolDetailsViewController: UITextViewDelegate {
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+        UIApplication.shared.open(URL)
+        return false
+    }
+}
+
+

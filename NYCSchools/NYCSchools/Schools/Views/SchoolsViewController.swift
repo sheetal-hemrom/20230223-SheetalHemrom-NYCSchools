@@ -19,21 +19,26 @@ class SchoolsViewController: UITableViewController {
     
     let schoolsViewModel: SchoolsViewModel = SchoolsViewModel()
     var anyCancellables : Set<AnyCancellable> = Set<AnyCancellable>()
+    var isLoadingList: Bool = false
+    var offset = 0
     
     
     // MARK: Life Cycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.showNavigationController(hidden: false)
-        showLoader()
-        schoolsViewModel.fetchSchools()
-        }
+        
+        // Make screen display variations
+        addSubscriptions()
+        showNavigationController(hidden: false)
+        fetchMoreSchools()
+    }
         
     override func viewWillAppear(_ animated: Bool) {
-            super.viewWillAppear(true)
-            addSubscriptions()
-        }
+        super.viewWillAppear(true)
+        self.tableView.contentInset = UIEdgeInsets(top: -40, left: 0, bottom: 0, right: 0);
+
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == StringConstants.sequeShowDetail.rawValue, let indexPath = sender as? IndexPath {
@@ -49,7 +54,7 @@ class SchoolsViewController: UITableViewController {
         schoolsViewModel.$schools
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { _ in
-                self.hideLoader()
+                self.finishLoadingSchool()
                 self.schoolsTable?.reloadData()
             })
             .store(in: &anyCancellables)
@@ -58,7 +63,7 @@ class SchoolsViewController: UITableViewController {
         schoolsViewModel.$alertErrorMessage
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { errorMessage in
-                self.hideLoader()
+                self.finishLoadingSchool()
                 if let errorMessage = errorMessage, !errorMessage.isEmpty{
                     self.showAlert(title: "Error", message: errorMessage)
                 }
@@ -69,6 +74,17 @@ class SchoolsViewController: UITableViewController {
     func showNavigationController(hidden: Bool = false){
         self.navigationController?.setNavigationBarHidden(hidden, animated: true)
         self.navigationItem.title =  Bundle.main.displayName ?? StringConstants.appName.rawValue
+    }
+    
+    func fetchMoreSchools() {
+        isLoadingList = true
+        showLoader()
+        schoolsViewModel.fetchSchools(offset: offset)
+    }
+    
+    func finishLoadingSchool() {
+        isLoadingList = false
+        hideLoader()
     }
 
 }
@@ -82,7 +98,7 @@ extension SchoolsViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: StringConstants.schoolCellIdentifier.rawValue) as! SchoolTableViewCell
-        cell.school_name = schoolsViewModel.schools[indexPath.row].name
+        cell.school = schoolsViewModel.schools[indexPath.row]
         return cell
     }
     
@@ -90,5 +106,12 @@ extension SchoolsViewController {
         self.performSegue(withIdentifier: StringConstants.sequeShowDetail.rawValue, sender: indexPath)
     }
     
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+
+          if (((scrollView.contentOffset.y + scrollView.frame.size.height) > scrollView.contentSize.height ) && !isLoadingList){
+              offset = offset + IntegerConstants.defaultPaginationBatchSize.rawValue
+              fetchMoreSchools()
+          }
+    }
 }
 

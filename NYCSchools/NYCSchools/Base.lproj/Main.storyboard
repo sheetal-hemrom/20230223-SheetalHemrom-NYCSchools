@@ -12,34 +12,44 @@
         <!--Root View Controller-->
         <scene sceneID="52D-kF-x0h">
             <objects>
-                <tableViewController id="noX-Ef-Wgj" customClass="SchoolsViewController" customModule="NYCSchools" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="79F-dZ-DPl">
+                <tableViewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="noX-Ef-Wgj" customClass="SchoolsViewController" customModule="NYCSchools" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="18" id="79F-dZ-DPl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="school_cell" translatesAutoresizingMaskIntoConstraints="NO" id="HhB-gs-CKl" customClass="SchoolTableViewCell" customModule="NYCSchools" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="55.5" width="414" height="61.5"/>
+                                <rect key="frame" x="0.0" y="55.5" width="414" height="128.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HhB-gs-CKl" id="NaT-RL-mVv">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="61.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="128.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Big big big big big big big text and more big text and even bigger text" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkD-xQ-r6g">
-                                            <rect key="frame" x="10" y="10" width="394" height="41.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="10" y="10" width="394" height="57.5"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="This is the school overview label with relatively bigger text " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J24-L9-RRt">
+                                            <rect key="frame" x="10" y="77.5" width="394" height="41"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="J24-L9-RRt" firstAttribute="top" secondItem="kkD-xQ-r6g" secondAttribute="bottom" constant="10" id="81d-Ap-Hcv"/>
                                         <constraint firstItem="kkD-xQ-r6g" firstAttribute="leading" secondItem="NaT-RL-mVv" secondAttribute="leading" constant="10" id="93S-0t-HUq"/>
-                                        <constraint firstAttribute="bottom" secondItem="kkD-xQ-r6g" secondAttribute="bottom" constant="10" id="NB3-RY-maG"/>
+                                        <constraint firstItem="J24-L9-RRt" firstAttribute="leading" secondItem="NaT-RL-mVv" secondAttribute="leading" constant="10" id="ckZ-UL-W1H"/>
+                                        <constraint firstAttribute="bottom" secondItem="J24-L9-RRt" secondAttribute="bottom" constant="10" id="cpO-o7-vG8"/>
                                         <constraint firstItem="kkD-xQ-r6g" firstAttribute="top" secondItem="NaT-RL-mVv" secondAttribute="top" constant="10" id="h4c-03-BKg"/>
+                                        <constraint firstAttribute="trailing" secondItem="J24-L9-RRt" secondAttribute="trailing" constant="10" id="nMN-FB-TjH"/>
                                         <constraint firstAttribute="trailing" secondItem="kkD-xQ-r6g" secondAttribute="trailing" constant="10" id="oAw-YF-TIB"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="overviewLabel" destination="J24-L9-RRt" id="bL4-0h-N3h"/>
                                     <outlet property="schoolNameLabel" destination="kkD-xQ-r6g" id="2qz-c0-sEy"/>
                                 </connections>
                             </tableViewCell>
@@ -49,6 +59,7 @@
                             <outlet property="delegate" destination="noX-Ef-Wgj" id="lBH-va-LzH"/>
                         </connections>
                     </tableView>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Root View Controller" id="lmi-2P-KFv"/>
                     <connections>
                         <outlet property="schoolsTable" destination="79F-dZ-DPl" id="dkQ-ad-b4p"/>
@@ -67,6 +78,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9l-ie-opc">
+                                <rect key="frame" x="20" y="98" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hp-hg-sVH">
+                                <rect key="frame" x="10" y="138.5" width="394" height="44"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="eyy-im-ocj">
                                 <rect key="frame" x="10" y="138.5" width="394" height="44"/>
                                 <subviews>
@@ -158,27 +181,45 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9l-ie-opc">
-                                <rect key="frame" x="20" y="98" width="374" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full school overview. Can be a very large text but should show" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4X-Ba-r3q">
+                                <rect key="frame" x="10" y="202.5" width="394" height="40.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kPq-vQ-pEr">
+                                <rect key="frame" x="10" y="253" width="394" height="16"/>
+                                <nil key="textColor"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="e4g-gT-vu5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="eyy-im-ocj" firstAttribute="leading" secondItem="e4g-gT-vu5" secondAttribute="leading" constant="10" id="7fc-ds-IRd"/>
                             <constraint firstItem="eyy-im-ocj" firstAttribute="top" secondItem="N9l-ie-opc" secondAttribute="bottom" constant="20" id="8hS-Ta-jey"/>
+                            <constraint firstItem="0Hp-hg-sVH" firstAttribute="top" secondItem="eyy-im-ocj" secondAttribute="top" id="E2q-4H-e4m"/>
                             <constraint firstItem="e4g-gT-vu5" firstAttribute="trailing" secondItem="eyy-im-ocj" secondAttribute="trailing" constant="10" id="Pif-cs-JSK"/>
+                            <constraint firstItem="0Hp-hg-sVH" firstAttribute="leading" secondItem="eyy-im-ocj" secondAttribute="leading" id="Vsq-j9-pKa"/>
+                            <constraint firstItem="0Hp-hg-sVH" firstAttribute="trailing" secondItem="eyy-im-ocj" secondAttribute="trailing" id="aqw-Nx-wkg"/>
+                            <constraint firstItem="F4X-Ba-r3q" firstAttribute="trailing" secondItem="eyy-im-ocj" secondAttribute="trailing" id="e4n-En-sF8"/>
                             <constraint firstItem="e4g-gT-vu5" firstAttribute="trailing" secondItem="N9l-ie-opc" secondAttribute="trailing" constant="20" id="eaj-xe-b0X"/>
                             <constraint firstItem="N9l-ie-opc" firstAttribute="top" secondItem="e4g-gT-vu5" secondAttribute="top" constant="10" id="f4r-0t-oWq"/>
+                            <constraint firstItem="kPq-vQ-pEr" firstAttribute="trailing" secondItem="F4X-Ba-r3q" secondAttribute="trailing" id="gTc-Bf-bRQ"/>
+                            <constraint firstItem="kPq-vQ-pEr" firstAttribute="top" secondItem="F4X-Ba-r3q" secondAttribute="bottom" constant="10" id="jhT-BN-9ye"/>
+                            <constraint firstItem="F4X-Ba-r3q" firstAttribute="top" secondItem="eyy-im-ocj" secondAttribute="bottom" constant="20" id="k7B-VY-FRC"/>
                             <constraint firstItem="N9l-ie-opc" firstAttribute="leading" secondItem="e4g-gT-vu5" secondAttribute="leading" constant="20" id="lfP-2m-HzG"/>
+                            <constraint firstItem="0Hp-hg-sVH" firstAttribute="height" secondItem="eyy-im-ocj" secondAttribute="height" id="ooe-zE-l70"/>
+                            <constraint firstItem="kPq-vQ-pEr" firstAttribute="leading" secondItem="F4X-Ba-r3q" secondAttribute="leading" id="x5j-Hs-Yz9"/>
+                            <constraint firstItem="F4X-Ba-r3q" firstAttribute="leading" secondItem="eyy-im-ocj" secondAttribute="leading" id="xax-OF-j8d"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="noY-yN-3un"/>
                     <connections>
+                        <outlet property="interactiveTextField" destination="kPq-vQ-pEr" id="HDC-Zb-K5Y"/>
+                        <outlet property="noScoresLabel" destination="0Hp-hg-sVH" id="M17-s5-J8I"/>
                         <outlet property="schoolName" destination="N9l-ie-opc" id="oCU-5z-0bM"/>
+                        <outlet property="schoolOverview" destination="F4X-Ba-r3q" id="HnE-ba-ZyL"/>
                         <outlet property="scoreStackView" destination="eyy-im-ocj" id="4K0-Y8-bCV"/>
                     </connections>
                 </viewController>
@@ -189,7 +230,7 @@
         <!--Navigation Controller-->
         <scene sceneID="y5B-yV-DrT">
             <objects>
-                <navigationController id="SWs-S0-1j5" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SWs-S0-1j5" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xe1-cp-rbp">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
