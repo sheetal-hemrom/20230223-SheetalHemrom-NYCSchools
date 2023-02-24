@@ -28,38 +28,34 @@ extension URLs {
 }
 
 
-enum StringConstants: CustomStringConvertible {
-    case appName
-    case schoolCellIdentifier
-    case genericError
+enum StringConstants: String {
+    case appName = "NYCSchools"
+    case schoolCellIdentifier = "school_cell"
+    case genericError = "Something went wrong! Please try again later"
+    case sequeShowDetail = "showDetail"
 }
 
-extension StringConstants {
-    var description: String {
-        switch self {
-        case .appName: return "NYCSchools"
-        case .schoolCellIdentifier: return "school_cell"
-        case .genericError: return "Something went wrong! Please try again later"
-        }
-    }
-}
+
 
 // NetworkingError with associated values
 enum NetworkingError: Error {
     case transportError(Error)
     case serverSideError(Int)
     case responseParseError
+    case responseError
 }
 
 extension NetworkingError: LocalizedError {
     public var errorDescription: String? {
         switch self {
-        case .transportError(_):
-            return "Transport error between urlsession elements"
-        case .serverSideError(let error):
-            return "Server returned error: \(error.description)"
+        case .transportError(let error):
+            return "Transport error between urlsession elements: \(error.localizedDescription)"
+        case .serverSideError(let status):
+            return "Server returned error: \(status)"
         case .responseParseError:
             return "Response returned by server is invalid"
+        case .responseError:
+            return "Server did not return proper response"
         }
     }
 }

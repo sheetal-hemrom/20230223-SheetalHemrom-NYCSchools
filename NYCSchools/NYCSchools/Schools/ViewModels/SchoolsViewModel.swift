@@ -15,12 +15,14 @@ class SchoolsViewModel {
     @Published var schools: [School] = []
     @Published var alertErrorMessage: String?
 
-    func fetchSchools(limit:String = "1", offset:String = "0") {
+    // MARK: Helper Functions
+    
+    func fetchSchools(limit:String = "5", offset:String = "0") {
         
         var schoolURL = URL(string: URLs.schoolURL.description)!
         schoolURL.appendQueryItem(name: "$limit", value: limit)
         schoolURL.appendQueryItem(name: "$offset", value: offset)
-        NetworkManager().makeGetRequest(url: schoolURL, classType: [School].self) { result in
+        NetworkManager.shared.makeGetRequest(url: schoolURL, type: [School].self) { result in
             switch result {
             case .success(let schools):
                 self.schools = schools

@@ -13,4 +13,22 @@ extension UIViewController {
         alert.addAction(UIAlertAction(title: buttonTitle, style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
+    
+    func showLoader() {
+        let alert = UIAlertController(title: nil, message: "", preferredStyle: .alert)
+
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.large
+        loadingIndicator.startAnimating();
+
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: false, completion: nil)
+    }
+    
+    func hideLoader() {
+        if let alertVC = self.navigationController?.presentedViewController, alertVC is UIAlertController{
+            alertVC.dismiss(animated: false, completion: nil)
+        }
+    }
 }
