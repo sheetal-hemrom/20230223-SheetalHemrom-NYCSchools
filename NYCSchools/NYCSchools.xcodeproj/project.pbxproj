@@ -54,6 +54,8 @@
 		13EE5ADD29A9429E00C9779E /* SchoolDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EE5ADC29A9429E00C9779E /* SchoolDetailsViewModel.swift */; };
 		13EE5AE229A94DD800C9779E /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EE5AE129A94DD800C9779E /* NetworkManagerTests.swift */; };
 		13EE5AE729A94FFF00C9779E /* school.json in Resources */ = {isa = PBXBuildFile; fileRef = 13EE5AE629A94FFF00C9779E /* school.json */; };
+		13EE5B0B29AA68DE00C9779E /* LinksTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EE5B0A29AA68DD00C9779E /* LinksTextView.swift */; };
+		13EE5B0F29AA68E400C9779E /* LinksTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EE5B0A29AA68DD00C9779E /* LinksTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +111,7 @@
 		13EE5ADC29A9429E00C9779E /* SchoolDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolDetailsViewModel.swift; sourceTree = "<group>"; };
 		13EE5AE129A94DD800C9779E /* NetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
 		13EE5AE629A94FFF00C9779E /* school.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = school.json; sourceTree = "<group>"; };
+		13EE5B0A29AA68DD00C9779E /* LinksTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +255,7 @@
 				13209F6C29A80716005D123F /* UIViewControllerExtension.swift */,
 				13EE5A7429A8C56000C9779E /* NSAttributedStringExtension.swift */,
 				13EE5A7929A8ECA100C9779E /* StringExtension.swift */,
+				13EE5B0A29AA68DD00C9779E /* LinksTextView.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -412,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13209F4D29A7FB62005D123F /* SchoolsViewModel.swift in Sources */,
+				13EE5B0B29AA68DE00C9779E /* LinksTextView.swift in Sources */,
 				13209F5F29A7FDA3005D123F /* URLExtension.swift in Sources */,
 				13209F5929A7FB8E005D123F /* SchoolDetailsViewController.swift in Sources */,
 				13209F2C29A7E82F005D123F /* NetworkManager.swift in Sources */,
@@ -438,6 +443,7 @@
 				13EE5ADD29A9429E00C9779E /* SchoolDetailsViewModel.swift in Sources */,
 				13209F6029A7FDA3005D123F /* URLExtension.swift in Sources */,
 				13EE5A8E29A92F4E00C9779E /* LoggerExtension.swift in Sources */,
+				13EE5B0F29AA68E400C9779E /* LinksTextView.swift in Sources */,
 				13EE5AB329A92FE600C9779E /* SchoolsViewModelTests.swift in Sources */,
 				13EE5A7E29A92F4200C9779E /* School.swift in Sources */,
 				13EE5A9629A92F5500C9779E /* NSAttributedStringExtension.swift in Sources */,

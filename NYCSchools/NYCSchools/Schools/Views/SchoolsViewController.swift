@@ -14,7 +14,6 @@ class SchoolsViewController: UITableViewController {
     
     @IBOutlet var schoolsTable: UITableView?
     
-    
     // MARK: Properties
     
     let schoolsViewModel: SchoolsViewModel = SchoolsViewModel()
@@ -31,6 +30,8 @@ class SchoolsViewController: UITableViewController {
         // Make screen display variations
         showNavigationController(hidden: false)
         addSubscriptions()
+        
+        // Setting TableView inset to -40. Issue with UITableViewController
         self.tableView.contentInset = UIEdgeInsets(top: -40, left: 0, bottom: 0, right: 0);
 
     }
@@ -46,12 +47,13 @@ class SchoolsViewController: UITableViewController {
     
     // MARK: Helper Methods
     
+    // Add subscriptions on viewModel's publisher properties and update UI
     func addSubscriptions() {
         // Subscribe to schools array from view model
         schoolsViewModel.$schools
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { _ in
-                self.finishLoadingSchool()
+                self.updateLoadingIndicator()
                 self.schoolsTable?.reloadData()
             })
             .store(in: &anyCancellables)
@@ -60,7 +62,7 @@ class SchoolsViewController: UITableViewController {
         schoolsViewModel.$alertErrorMessage
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { errorMessage in
-                self.finishLoadingSchool()
+                self.updateLoadingIndicator()
                 if let errorMessage = errorMessage, !errorMessage.isEmpty{
                     self.showAlert(title: "Error", message: errorMessage)
                 }
@@ -74,14 +76,13 @@ class SchoolsViewController: UITableViewController {
     }
     
     func fetchMoreSchools() {
-        isLoadingList = true
-        showLoader()
+        updateLoadingIndicator(stop: false)
         schoolsViewModel.fetchSchools(offset: offset)
     }
     
-    func finishLoadingSchool() {
-        isLoadingList = false
-        hideLoader()
+    func updateLoadingIndicator(stop: Bool = true) {
+        isLoadingList = !stop
+        stop ? hideLoader() : showLoader()
     }
     
 }

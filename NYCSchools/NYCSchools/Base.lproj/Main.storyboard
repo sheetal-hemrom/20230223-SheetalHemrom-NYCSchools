@@ -9,20 +9,20 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--NYCSchools-->
+        <!--Root View Controller-->
         <scene sceneID="52D-kF-x0h">
             <objects>
-                <tableViewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="noX-Ef-Wgj" customClass="SchoolsViewController" customModule="NYCSchools" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="18" id="79F-dZ-DPl">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="noX-Ef-Wgj" customClass="SchoolsViewController" customModule="NYCSchools" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="18" id="79F-dZ-DPl">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="school_cell" translatesAutoresizingMaskIntoConstraints="NO" id="HhB-gs-CKl" customClass="SchoolTableViewCell" customModule="NYCSchools" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="55.333332061767578" width="428" height="188.33332824707031"/>
+                                <rect key="frame" x="0.0" y="55.333332061767578" width="428" height="188"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HhB-gs-CKl" id="NaT-RL-mVv">
-                                    <rect key="frame" x="0.0" y="0.0" width="428" height="188.33332824707031"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="HhB-gs-CKl" id="NaT-RL-mVv">
+                                    <rect key="frame" x="0.0" y="0.0" width="428" height="188"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Big big big big big big big text and more big text and even bigger text" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkD-xQ-r6g">
@@ -31,15 +31,15 @@
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="J24-L9-RRt">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J24-L9-RRt">
                                             <rect key="frame" x="10" y="77.333333333333314" width="408" height="100.66666666666669"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <string key="text">This is the school overview label with relatively bigger text This is the sThis is the school overview label with relThis is the school overview label with relatively bigger text atively bigger text chool overview label with relatively bigger text </string>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <viewLayoutGuide key="safeArea" id="drD-G6-mI9"/>
                                     <constraints>
                                         <constraint firstItem="J24-L9-RRt" firstAttribute="top" secondItem="kkD-xQ-r6g" secondAttribute="bottom" constant="10" id="81d-Ap-Hcv"/>
                                         <constraint firstItem="kkD-xQ-r6g" firstAttribute="leading" secondItem="NaT-RL-mVv" secondAttribute="leading" constant="10" id="93S-0t-HUq"/>
@@ -62,7 +62,9 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="NYCSchools" id="lmi-2P-KFv"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="lmi-2P-KFv"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="428" height="926"/>
                     <connections>
                         <outlet property="schoolsTable" destination="79F-dZ-DPl" id="dkQ-ad-b4p"/>
                         <segue destination="owV-24-vx3" kind="show" identifier="showDetail" id="6cb-ps-9Pi"/>
@@ -80,7 +82,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9l-ie-opc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9l-ie-opc">
                                 <rect key="frame" x="20" y="98" width="388" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -168,40 +170,43 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kPq-vQ-pEr">
-                                <rect key="frame" x="10" y="235.66666666666666" width="408" height="16"/>
-                                <nil key="textColor"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ac6-ZU-2J8">
+                                <rect key="frame" x="10" y="245.66666666666663" width="408" height="187"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in https://www.google.com/ reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="e4g-gT-vu5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="TO1-WE-mtp" firstAttribute="leading" secondItem="e4g-gT-vu5" secondAttribute="leading" constant="10" id="91K-fr-TG9"/>
                             <constraint firstItem="0Hp-hg-sVH" firstAttribute="top" secondItem="N9l-ie-opc" secondAttribute="bottom" constant="20" id="Anr-Ew-5uz"/>
+                            <constraint firstItem="Ac6-ZU-2J8" firstAttribute="top" secondItem="F4X-Ba-r3q" secondAttribute="bottom" constant="20" id="DIF-Nn-w9b"/>
                             <constraint firstItem="e4g-gT-vu5" firstAttribute="trailing" secondItem="TO1-WE-mtp" secondAttribute="trailing" constant="10" id="Hbg-Jg-cdR"/>
                             <constraint firstItem="TO1-WE-mtp" firstAttribute="top" secondItem="0Hp-hg-sVH" secondAttribute="bottom" id="Ik6-vN-wHy"/>
                             <constraint firstItem="F4X-Ba-r3q" firstAttribute="top" secondItem="TO1-WE-mtp" secondAttribute="bottom" constant="10" id="MeA-E3-3oF"/>
                             <constraint firstItem="e4g-gT-vu5" firstAttribute="trailing" secondItem="0Hp-hg-sVH" secondAttribute="trailing" constant="10" id="RuM-Iy-uJh"/>
+                            <constraint firstItem="Ac6-ZU-2J8" firstAttribute="leading" secondItem="F4X-Ba-r3q" secondAttribute="leading" id="YUg-fx-glN"/>
                             <constraint firstItem="0Hp-hg-sVH" firstAttribute="leading" secondItem="e4g-gT-vu5" secondAttribute="leading" constant="10" id="cNt-lg-CTW"/>
+                            <constraint firstItem="Ac6-ZU-2J8" firstAttribute="trailing" secondItem="F4X-Ba-r3q" secondAttribute="trailing" id="dL4-Ig-Bnf"/>
                             <constraint firstItem="e4g-gT-vu5" firstAttribute="trailing" secondItem="N9l-ie-opc" secondAttribute="trailing" constant="20" id="eaj-xe-b0X"/>
                             <constraint firstItem="N9l-ie-opc" firstAttribute="top" secondItem="e4g-gT-vu5" secondAttribute="top" constant="10" id="f4r-0t-oWq"/>
                             <constraint firstItem="F4X-Ba-r3q" firstAttribute="trailing" secondItem="TO1-WE-mtp" secondAttribute="trailing" id="fUF-hl-pwg"/>
-                            <constraint firstItem="kPq-vQ-pEr" firstAttribute="trailing" secondItem="F4X-Ba-r3q" secondAttribute="trailing" id="gTc-Bf-bRQ"/>
                             <constraint firstItem="F4X-Ba-r3q" firstAttribute="leading" secondItem="TO1-WE-mtp" secondAttribute="leading" id="jNg-OP-nAN"/>
-                            <constraint firstItem="kPq-vQ-pEr" firstAttribute="top" secondItem="F4X-Ba-r3q" secondAttribute="bottom" constant="10" id="jhT-BN-9ye"/>
-                            <constraint firstItem="kPq-vQ-pEr" firstAttribute="leading" secondItem="TO1-WE-mtp" secondAttribute="leading" id="kzK-bz-3GP"/>
                             <constraint firstItem="N9l-ie-opc" firstAttribute="leading" secondItem="e4g-gT-vu5" secondAttribute="leading" constant="20" id="lfP-2m-HzG"/>
-                            <constraint firstItem="kPq-vQ-pEr" firstAttribute="trailing" secondItem="TO1-WE-mtp" secondAttribute="trailing" id="mJ0-6L-mmy"/>
-                            <constraint firstItem="kPq-vQ-pEr" firstAttribute="leading" secondItem="F4X-Ba-r3q" secondAttribute="leading" id="x5j-Hs-Yz9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="noY-yN-3un"/>
                     <connections>
-                        <outlet property="interactiveTextField" destination="kPq-vQ-pEr" id="HDC-Zb-K5Y"/>
+                        <outlet property="linksTextView" destination="Ac6-ZU-2J8" id="18g-5e-8fp"/>
                         <outlet property="noScoresLabel" destination="0Hp-hg-sVH" id="M17-s5-J8I"/>
                         <outlet property="schoolName" destination="N9l-ie-opc" id="oCU-5z-0bM"/>
                         <outlet property="schoolOverview" destination="F4X-Ba-r3q" id="HnE-ba-ZyL"/>
+                        <outlet property="scoreNameStackView" destination="hws-E8-wYk" id="BQg-Jz-q8x"/>
                         <outlet property="scoreStackView" destination="eyy-im-ocj" id="4K0-Y8-bCV"/>
                     </connections>
                 </viewController>
@@ -217,12 +222,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xe1-cp-rbp">
                         <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" name="AccentColor"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="textShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
@@ -244,6 +248,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="E2e-pG-vhf" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jz6-OC-90B">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

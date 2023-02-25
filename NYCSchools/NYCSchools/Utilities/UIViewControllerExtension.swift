@@ -28,7 +28,7 @@ extension UIViewController {
     
     func hideLoader() {
         if let alertVC = self.navigationController?.presentedViewController, alertVC is UIAlertController{
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 alertVC.dismiss(animated: false, completion: nil)
             }
         }
