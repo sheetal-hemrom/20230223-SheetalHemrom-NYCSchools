@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--NYCSchools-->
         <scene sceneID="52D-kF-x0h">
             <objects>
                 <tableViewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="noX-Ef-Wgj" customClass="SchoolsViewController" customModule="NYCSchools" customModuleProvider="target" sceneMemberID="viewController">
@@ -62,7 +62,7 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="lmi-2P-KFv"/>
+                    <navigationItem key="navigationItem" title="NYCSchools" id="lmi-2P-KFv"/>
                     <connections>
                         <outlet property="schoolsTable" destination="79F-dZ-DPl" id="dkQ-ad-b4p"/>
                         <segue destination="owV-24-vx3" kind="show" identifier="showDetail" id="6cb-ps-9Pi"/>
@@ -87,110 +87,89 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hp-hg-sVH">
-                                <rect key="frame" x="10" y="138.33333333333334" width="408" height="32"/>
+                                <rect key="frame" x="10" y="138.33333333333334" width="408" height="0.0"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="eyy-im-ocj">
-                                <rect key="frame" x="10" y="138.33333333333334" width="408" height="32"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="TO1-WE-mtp">
+                                <rect key="frame" x="10" y="138.33333333333334" width="408" height="37"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bc6-sY-2TA">
-                                        <rect key="frame" x="0.0" y="0.0" width="402" height="32"/>
-                                        <attributedString key="attributedText">
-                                            <fragment>
-                                                <string key="content">SAT Test Takers 
-</string>
-                                                <attributes>
-                                                    <font key="NSFont" size="10" name="HelveticaNeue-Bold"/>
-                                                    <font key="NSOriginalFont" size="10" name="HelveticaNeue-Bold"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="&lt;value&gt;">
-                                                <attributes>
-                                                    <color key="NSColor" red="0.090116299688816071" green="0.47118449211120605" blue="0.47305476665496826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="go2-DS-cKU">
-                                        <rect key="frame" x="404" y="0.0" width="0.0" height="12"/>
-                                        <attributedString key="attributedText">
-                                            <fragment>
-                                                <string key="content">SAT Critical Reading Avg Score
-</string>
-                                                <attributes>
-                                                    <font key="NSFont" size="10" name="HelveticaNeue-Bold"/>
-                                                    <font key="NSOriginalFont" size="10" name="HelveticaNeue-Bold"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="&lt;value&gt;">
-                                                <attributes>
-                                                    <color key="NSColor" red="0.22233" green="0.46414" blue="0.46937000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVz-NS-5QA">
-                                        <rect key="frame" x="406" y="0.0" width="0.0" height="12"/>
-                                        <attributedString key="attributedText">
-                                            <fragment>
-                                                <string key="content">SAT Math Avg Score
-</string>
-                                                <attributes>
-                                                    <font key="NSFont" size="10" name="HelveticaNeue-Bold"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="&lt;value&gt;">
-                                                <attributes>
-                                                    <color key="NSColor" red="0.22233" green="0.46414" blue="0.46937000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Np5-Dm-pAg">
-                                        <rect key="frame" x="408" y="0.0" width="0.0" height="12"/>
-                                        <attributedString key="attributedText">
-                                            <fragment>
-                                                <string key="content">SAT Writing Avg Score
-</string>
-                                                <attributes>
-                                                    <font key="NSFont" size="10" name="HelveticaNeue-Bold"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="&lt;value&gt;">
-                                                <attributes>
-                                                    <color key="NSColor" red="0.22233" green="0.46414" blue="0.46937000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="hws-E8-wYk">
+                                        <rect key="frame" x="0.0" y="0.0" width="408" height="12"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SAT Test Takers" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gh6-yY-9mM">
+                                                <rect key="frame" x="0.0" y="0.0" width="101.66666666666667" height="12"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="10"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SAT Critical Reading Avg Score" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6a-0K-9gk">
+                                                <rect key="frame" x="102.66666666666669" y="0.0" width="102" height="12"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="10"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SAT Math Avg Score" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JlS-xg-N0O">
+                                                <rect key="frame" x="205.66666666666666" y="0.0" width="101.66666666666666" height="12"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="10"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SAT Writing Avg Score" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3H-gd-MLI">
+                                                <rect key="frame" x="308.33333333333331" y="0.0" width="99.666666666666686" height="12"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="10"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="eyy-im-ocj">
+                                        <rect key="frame" x="0.0" y="13" width="408" height="24"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;value&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bc6-sY-2TA">
+                                                <rect key="frame" x="0.0" y="0.0" width="402" height="24"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                                <color key="textColor" systemColor="linkColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;value&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="go2-DS-cKU">
+                                                <rect key="frame" x="404" y="0.0" width="0.0" height="24"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                                <color key="textColor" systemColor="linkColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;value&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVz-NS-5QA">
+                                                <rect key="frame" x="406" y="0.0" width="0.0" height="24"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                                <color key="textColor" systemColor="linkColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;value&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Np5-Dm-pAg">
+                                                <rect key="frame" x="408" y="0.0" width="0.0" height="24"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                                <color key="textColor" systemColor="linkColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </stackView>
                                 </subviews>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="hws-E8-wYk" secondAttribute="trailing" id="ZvC-qK-Xri"/>
+                                    <constraint firstItem="hws-E8-wYk" firstAttribute="leading" secondItem="TO1-WE-mtp" secondAttribute="leading" id="ebB-JE-H9x"/>
+                                </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full school overview. Can be a very large text but should show" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4X-Ba-r3q">
-                                <rect key="frame" x="10" y="190.33333333333334" width="408" height="40.333333333333343"/>
+                                <rect key="frame" x="10" y="185.33333333333334" width="408" height="40.333333333333343"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kPq-vQ-pEr">
-                                <rect key="frame" x="10" y="240.66666666666666" width="408" height="15.999999999999972"/>
+                                <rect key="frame" x="10" y="235.66666666666666" width="408" height="16"/>
                                 <nil key="textColor"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -198,22 +177,23 @@
                         <viewLayoutGuide key="safeArea" id="e4g-gT-vu5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="eyy-im-ocj" firstAttribute="leading" secondItem="e4g-gT-vu5" secondAttribute="leading" constant="10" id="7fc-ds-IRd"/>
-                            <constraint firstItem="eyy-im-ocj" firstAttribute="top" secondItem="N9l-ie-opc" secondAttribute="bottom" constant="20" id="8hS-Ta-jey"/>
-                            <constraint firstItem="0Hp-hg-sVH" firstAttribute="top" secondItem="eyy-im-ocj" secondAttribute="top" id="E2q-4H-e4m"/>
-                            <constraint firstItem="e4g-gT-vu5" firstAttribute="trailing" secondItem="eyy-im-ocj" secondAttribute="trailing" constant="10" id="Pif-cs-JSK"/>
-                            <constraint firstItem="0Hp-hg-sVH" firstAttribute="leading" secondItem="eyy-im-ocj" secondAttribute="leading" id="Vsq-j9-pKa"/>
-                            <constraint firstItem="0Hp-hg-sVH" firstAttribute="trailing" secondItem="eyy-im-ocj" secondAttribute="trailing" id="aqw-Nx-wkg"/>
-                            <constraint firstItem="F4X-Ba-r3q" firstAttribute="trailing" secondItem="eyy-im-ocj" secondAttribute="trailing" id="e4n-En-sF8"/>
+                            <constraint firstItem="TO1-WE-mtp" firstAttribute="leading" secondItem="e4g-gT-vu5" secondAttribute="leading" constant="10" id="91K-fr-TG9"/>
+                            <constraint firstItem="0Hp-hg-sVH" firstAttribute="top" secondItem="N9l-ie-opc" secondAttribute="bottom" constant="20" id="Anr-Ew-5uz"/>
+                            <constraint firstItem="e4g-gT-vu5" firstAttribute="trailing" secondItem="TO1-WE-mtp" secondAttribute="trailing" constant="10" id="Hbg-Jg-cdR"/>
+                            <constraint firstItem="TO1-WE-mtp" firstAttribute="top" secondItem="0Hp-hg-sVH" secondAttribute="bottom" id="Ik6-vN-wHy"/>
+                            <constraint firstItem="F4X-Ba-r3q" firstAttribute="top" secondItem="TO1-WE-mtp" secondAttribute="bottom" constant="10" id="MeA-E3-3oF"/>
+                            <constraint firstItem="e4g-gT-vu5" firstAttribute="trailing" secondItem="0Hp-hg-sVH" secondAttribute="trailing" constant="10" id="RuM-Iy-uJh"/>
+                            <constraint firstItem="0Hp-hg-sVH" firstAttribute="leading" secondItem="e4g-gT-vu5" secondAttribute="leading" constant="10" id="cNt-lg-CTW"/>
                             <constraint firstItem="e4g-gT-vu5" firstAttribute="trailing" secondItem="N9l-ie-opc" secondAttribute="trailing" constant="20" id="eaj-xe-b0X"/>
                             <constraint firstItem="N9l-ie-opc" firstAttribute="top" secondItem="e4g-gT-vu5" secondAttribute="top" constant="10" id="f4r-0t-oWq"/>
+                            <constraint firstItem="F4X-Ba-r3q" firstAttribute="trailing" secondItem="TO1-WE-mtp" secondAttribute="trailing" id="fUF-hl-pwg"/>
                             <constraint firstItem="kPq-vQ-pEr" firstAttribute="trailing" secondItem="F4X-Ba-r3q" secondAttribute="trailing" id="gTc-Bf-bRQ"/>
+                            <constraint firstItem="F4X-Ba-r3q" firstAttribute="leading" secondItem="TO1-WE-mtp" secondAttribute="leading" id="jNg-OP-nAN"/>
                             <constraint firstItem="kPq-vQ-pEr" firstAttribute="top" secondItem="F4X-Ba-r3q" secondAttribute="bottom" constant="10" id="jhT-BN-9ye"/>
-                            <constraint firstItem="F4X-Ba-r3q" firstAttribute="top" secondItem="eyy-im-ocj" secondAttribute="bottom" constant="20" id="k7B-VY-FRC"/>
+                            <constraint firstItem="kPq-vQ-pEr" firstAttribute="leading" secondItem="TO1-WE-mtp" secondAttribute="leading" id="kzK-bz-3GP"/>
                             <constraint firstItem="N9l-ie-opc" firstAttribute="leading" secondItem="e4g-gT-vu5" secondAttribute="leading" constant="20" id="lfP-2m-HzG"/>
-                            <constraint firstItem="0Hp-hg-sVH" firstAttribute="height" secondItem="eyy-im-ocj" secondAttribute="height" id="ooe-zE-l70"/>
+                            <constraint firstItem="kPq-vQ-pEr" firstAttribute="trailing" secondItem="TO1-WE-mtp" secondAttribute="trailing" id="mJ0-6L-mmy"/>
                             <constraint firstItem="kPq-vQ-pEr" firstAttribute="leading" secondItem="F4X-Ba-r3q" secondAttribute="leading" id="x5j-Hs-Yz9"/>
-                            <constraint firstItem="F4X-Ba-r3q" firstAttribute="leading" secondItem="eyy-im-ocj" secondAttribute="leading" id="xax-OF-j8d"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="noY-yN-3un"/>
@@ -238,6 +218,14 @@
                         <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" name="AccentColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="smd-Hv-Dtv">
                         <autoresizingMask key="autoresizingMask"/>
@@ -272,6 +260,9 @@
         <namedColor name="AccentColor">
             <color red="0.60900002717971802" green="0.64899998903274536" blue="0.71700000762939453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

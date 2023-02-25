@@ -60,13 +60,13 @@ class SchoolDetailsViewController: UIViewController {
                             if let label = element as? UILabel {
                                 switch index {
                                 case 0:
-                                    self.renderAttributedStringForScore(scoreValue: String(score.num_of_sat_test_takers), label: label)
+                                    label.text = score.num_of_sat_test_takers
                                 case 1:
-                                    self.renderAttributedStringForScore(scoreValue: String(score.sat_critical_reading_avg_score), label: label)
+                                    label.text = score.sat_critical_reading_avg_score
                                 case 2:
-                                    self.renderAttributedStringForScore(scoreValue: String(score.sat_math_avg_score), label: label)
+                                    label.text = score.sat_math_avg_score
                                 case 3:
-                                    self.renderAttributedStringForScore(scoreValue: String(score.sat_writing_avg_score), label: label)
+                                    label.text = score.sat_writing_avg_score
                                 default:
                                     break
                                 }
@@ -90,11 +90,6 @@ class SchoolDetailsViewController: UIViewController {
                 }
             })
             .store(in: &anyCancellables)
-    }
-    
-    
-    func renderAttributedStringForScore(scoreValue: String, label: UILabel) {
-        label.attributedText = label.attributedText?.replacing(placeholder: "<value>", with: scoreValue)
     }
     
     func renderAttributedStringForLinks(website: String) {
