@@ -12,4 +12,4 @@ N:B: The SPM should be resolved automatically by .xcodeproj while loading the bu
 ## Development Env
 
 Xcode - 12.4, 
-iOS 14+
+iOS 14.4+
