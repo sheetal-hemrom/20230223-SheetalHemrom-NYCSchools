@@ -6,6 +6,7 @@
 //
 
 import Logging
+import Foundation
 
 extension Logger {
     func e(_ msg: String, file: String = #fileID, line: Int = #line) {
@@ -23,6 +24,10 @@ extension Logger {
     func i(_ msg: String, file: String = #fileID, line: Int = #line) {
         let pos = "\(file.split(separator: "/").last!):\(line)"
         self.info("\(pos): \(msg)")
+    }
+    
+    static func initLogger() -> Self {
+        return Logger(label: Bundle.main.displayName ?? StringConstants.appName.rawValue)
     }
 }
 

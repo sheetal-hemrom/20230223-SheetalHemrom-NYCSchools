@@ -14,7 +14,7 @@ class NetworkManager {
     
     // MARK: - Constants & Variables
     
-    private let logger = Logger(label: Bundle.main.displayName ?? StringConstants.appName.rawValue)
+    private let logger = Logger.initLogger()
     var anyCancellables : Set<AnyCancellable> = Set<AnyCancellable>()
     var urlSession: URLSession?
     let asynchrounsQueue = DispatchQueue.global(qos: .userInteractive)
@@ -44,6 +44,7 @@ class NetworkManager {
                     completionHandler(Result.failure(NetworkingError.transportError(error)))
                 }
                 guard let httpResponse = response as? HTTPURLResponse else {
+                    self.logger.e("URL session threw HTTPURLResponse error \(url)")
                     completionHandler(Result.failure(NetworkingError.responseParseError))
                     return
                 }
@@ -73,6 +74,7 @@ class NetworkManager {
                 .tryMap() { element -> Data in
                     guard let httpResponse = element.response as? HTTPURLResponse,
                           (200...299).contains(httpResponse.statusCode) else {
+                        self.logger.e("URL session threw HTTPURLResponse error \(url)")
                         throw URLError(.badServerResponse)
                     }
                     return element.data
@@ -81,31 +83,11 @@ class NetworkManager {
                 .receive(on: DispatchQueue.main)
                 .sink(receiveCompletion: { completion in
                     if case let .failure(error) = completion {
+                        self.logger.e("URL session threw error: \(error) for url: \(url)")
                         promise(.failure(error))
                     }
                 }, receiveValue: { promise(.success($0))} )
                 .store(in: &self.anyCancellables)
         }
     }
-    
-    //    func simplifyJSONDecodingError<T:Decodable>(type: T.Type, data: Data) -> NetworkingError {
-    //        var errorMessage:String = ""
-    //        do {
-    //            let parsedDataClass: T = try self.jsonDecoder.decode(type, from: data)
-    //        } catch let DecodingError.dataCorrupted(context) {
-    //            errorMessage = context.debugDescription
-    //        } catch let DecodingError.keyNotFound(key, context) {
-    //            let errorMessage = "Key :\(key) not found: \(context.debugDescription)"
-    //        } catch let DecodingError.valueNotFound(value, context) {
-    //            errorMessage = "Value :\(value) not found: \(context.debugDescription)"
-    //        } catch let DecodingError.typeMismatch(type, context)  {
-    //            errorMessage = "Type :\(type) mismatch: \(context.debugDescription)"
-    //        } catch {
-    //            errorMessage = error.localizedDescription
-    //        }
-    //    defer {
-    //            self.logger.e(errorMessage)
-    //            completionHandler(Result.failure(NetworkingError.jsonParserError(errorMessage)))
-    //        }
-    //    }
 }

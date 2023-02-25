@@ -18,7 +18,7 @@ class SchoolDetailViewModel {
     @Published var alertErrorMessage: String?
     
     
-    private let logger = Logger(label: Bundle.main.displayName ?? StringConstants.appName.rawValue)
+    private let logger = Logger.initLogger()
     var anyCancellables : Set<AnyCancellable> = Set<AnyCancellable>()
     var networkManager: NetworkManager?
     

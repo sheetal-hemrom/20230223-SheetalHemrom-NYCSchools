@@ -34,6 +34,7 @@ enum StringConstants: String {
     case appName = "NYCSchools"
     case genericError = "Something went wrong! Please try again later"
     case noScoresMessage = "No scores available!"
+    case loaderMessage = "loading ..."
     case defaultConfiguration = "Default Configuration"
     case baseURL = "https://data.cityofnewyork.us"
     
