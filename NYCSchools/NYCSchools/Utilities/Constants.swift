@@ -47,7 +47,12 @@ enum IntegerConstants: Int {
 
 
 // NetworkingError with associated values
-enum NetworkingError: Error {
+enum NetworkingError: Error, Equatable {
+    
+    static func == (lhs: NetworkingError, rhs: NetworkingError) -> Bool {
+        lhs.errorDescription == rhs.errorDescription
+    }
+    
     case transportError(Error)
     case serverSideError(Int)
     case jsonParserError(String)

@@ -16,6 +16,7 @@ class NetworkManager {
     
     private let logger = Logger(label: Bundle.main.displayName ?? StringConstants.appName.rawValue)
     var anyCancellables : Set<AnyCancellable> = Set<AnyCancellable>()
+    var urlSession: URLSession?
     
     // MARK: - Computed Properties
     
@@ -25,11 +26,17 @@ class NetworkManager {
         return decoder
     }
     
+    // MARK: - Initializers
+    
+    init(session: URLSession = URLSession.shared) {
+        urlSession = session
+    }
+    
     // MARK: - Functions
     
     // Using Completion Handlers Result type of enum type T and Error
     func makeGetRequest<T:Decodable>(url: URL, type: T.Type, completionHandler: @escaping(Result<T, Error>) -> Void){
-        let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+        let task = urlSession?.dataTask(with: url, completionHandler: { (data, response, error) in
             if let error = error {
                 self.logger.e("URL session threw error: \(error)")
                 completionHandler(Result.failure(NetworkingError.transportError(error)))
@@ -53,13 +60,13 @@ class NetworkManager {
                 completionHandler(Result.failure(NetworkingError.serverSideError(httpResponse.statusCode)))
             }
         })
-        task.resume()
+        task?.resume()
     }
     
     // API call using Combile's Future Publisher class
     func makeGetRequestWithFuture<T:Decodable>(url: URL, type: T.Type) -> Future<T, Error> {
         return Future<T, Error> { promise in
-            URLSession.shared.dataTaskPublisher(for: url)
+            self.urlSession?.dataTaskPublisher(for: url)
                 .tryMap() { element -> Data in
                     guard let httpResponse = element.response as? HTTPURLResponse,
                           (200...299).contains(httpResponse.statusCode) else {

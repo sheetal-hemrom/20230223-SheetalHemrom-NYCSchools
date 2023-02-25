@@ -52,6 +52,8 @@
 		13EE5AC129A932B900C9779E /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EE5AC029A932B900C9779E /* URLSessionMock.swift */; };
 		13EE5AC629A9332800C9779E /* NetworkManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EE5AC529A9332800C9779E /* NetworkManagerMock.swift */; };
 		13EE5ADD29A9429E00C9779E /* SchoolDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EE5ADC29A9429E00C9779E /* SchoolDetailsViewModel.swift */; };
+		13EE5AE229A94DD800C9779E /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EE5AE129A94DD800C9779E /* NetworkManagerTests.swift */; };
+		13EE5AE729A94FFF00C9779E /* school.json in Resources */ = {isa = PBXBuildFile; fileRef = 13EE5AE629A94FFF00C9779E /* school.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +107,8 @@
 		13EE5AC029A932B900C9779E /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
 		13EE5AC529A9332800C9779E /* NetworkManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerMock.swift; sourceTree = "<group>"; };
 		13EE5ADC29A9429E00C9779E /* SchoolDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolDetailsViewModel.swift; sourceTree = "<group>"; };
+		13EE5AE129A94DD800C9779E /* NetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
+		13EE5AE629A94FFF00C9779E /* school.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = school.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,11 +176,13 @@
 		13209EF929A7D657005D123F /* NYCSchoolsTests */ = {
 			isa = PBXGroup;
 			children = (
+				13EE5AEB29A9500400C9779E /* MockResponse */,
 				13EE5AB729A9326300C9779E /* Mocks */,
 				13209EFA29A7D657005D123F /* NYCSchoolsTests.swift */,
 				13209EFC29A7D657005D123F /* Info.plist */,
 				13EE5AB229A92FE600C9779E /* SchoolsViewModelTests.swift */,
 				13EE5ADC29A9429E00C9779E /* SchoolDetailsViewModel.swift */,
+				13EE5AE129A94DD800C9779E /* NetworkManagerTests.swift */,
 			);
 			path = NYCSchoolsTests;
 			sourceTree = "<group>";
@@ -258,6 +264,14 @@
 				13EE5AC529A9332800C9779E /* NetworkManagerMock.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		13EE5AEB29A9500400C9779E /* MockResponse */ = {
+			isa = PBXGroup;
+			children = (
+				13EE5AE629A94FFF00C9779E /* school.json */,
+			);
+			path = MockResponse;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,6 +393,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13EE5AE729A94FFF00C9779E /* school.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +447,7 @@
 				13209F5A29A7FB8E005D123F /* SchoolDetailsViewController.swift in Sources */,
 				13EE5A8A29A92F4B00C9779E /* BundleExtensions.swift in Sources */,
 				13EE5AB929A9327A00C9779E /* URLSessionDataTaskMock.swift in Sources */,
+				13EE5AE229A94DD800C9779E /* NetworkManagerTests.swift in Sources */,
 				13209F4E29A7FB62005D123F /* SchoolsViewModel.swift in Sources */,
 				13209EFB29A7D657005D123F /* NYCSchoolsTests.swift in Sources */,
 				13EE5A9E29A92F5C00C9779E /* NetworkManager.swift in Sources */,

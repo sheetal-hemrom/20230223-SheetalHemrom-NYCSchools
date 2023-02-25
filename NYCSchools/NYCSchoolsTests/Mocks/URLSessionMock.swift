@@ -14,14 +14,16 @@ class URLSessionMock: URLSession {
     // data and error can be set to provide data or an error
     var data: Data?
     var error: Error?
+    var httpResponse: HTTPURLResponse?
     override func dataTask(
         with url: URL,
         completionHandler: @escaping CompletionHandler
         ) -> URLSessionDataTask {
         let data = self.data
         let error = self.error
+        let httpResponse = self.httpResponse
         return URLSessionDataTaskMock {
-            completionHandler(data, nil, error)
+            completionHandler(data, httpResponse, error)
         }
     }
 }

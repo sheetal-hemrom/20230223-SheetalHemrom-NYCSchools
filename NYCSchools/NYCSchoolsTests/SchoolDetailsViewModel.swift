@@ -13,6 +13,7 @@ class SchoolDetailsViewModelTests: XCTestCase {
     func testfetchSchoolScoreForDbnFails() throws {
         // Given
         let networkManager = NetworkManagerMock<[SchoolScore]>()
+        // Injecting  NetworkManagerMock to The ViewModel
         let schoolDetailsViewModel = SchoolDetailViewModel(networkManager: networkManager)
         let customError = NetworkingError.jsonParserError("Some Random Error")
         // We assign a error to the mock networkManager
@@ -28,6 +29,7 @@ class SchoolDetailsViewModelTests: XCTestCase {
     func testfetchSchoolScoreForDbnSuceeds() throws {
         // Given
         let networkManager = NetworkManagerMock<[SchoolScore]>()
+        // Injecting  NetworkManagerMock to The ViewModel
         let schoolDetailsViewModel = SchoolDetailViewModel(networkManager: networkManager)
         // We assign a mocked school to the success block in networkManager
         let mock_school_scores = [SchoolScore(dbn: "XCTY", num_of_sat_test_takers: "2", sat_critical_reading_avg_score: "45", sat_math_avg_score: "56", sat_writing_avg_score: "90")]
