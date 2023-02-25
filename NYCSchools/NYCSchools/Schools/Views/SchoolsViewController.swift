@@ -30,18 +30,9 @@ class SchoolsViewController: UITableViewController {
         
         // Make screen display variations
         showNavigationController(hidden: false)
-        
-        // Hack to reset autoresizing only for first time (iPhone 12 Pro Max issue)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.schoolsTable?.reloadData()
-        }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
         addSubscriptions()
         self.tableView.contentInset = UIEdgeInsets(top: -40, left: 0, bottom: 0, right: 0);
-        
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SWs-S0-1j5">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E2e-pG-vhf">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -13,26 +13,28 @@
         <scene sceneID="52D-kF-x0h">
             <objects>
                 <tableViewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="noX-Ef-Wgj" customClass="SchoolsViewController" customModule="NYCSchools" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="18" id="79F-dZ-DPl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="18" id="79F-dZ-DPl">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="school_cell" translatesAutoresizingMaskIntoConstraints="NO" id="HhB-gs-CKl" customClass="SchoolTableViewCell" customModule="NYCSchools" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="55.5" width="414" height="128.5"/>
+                                <rect key="frame" x="0.0" y="55.333332061767578" width="428" height="188.33332824707031"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HhB-gs-CKl" id="NaT-RL-mVv">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="128.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="428" height="188.33332824707031"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Big big big big big big big text and more big text and even bigger text" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkD-xQ-r6g">
-                                            <rect key="frame" x="10" y="10" width="394" height="57.5"/>
+                                            <rect key="frame" x="10" y="10.000000000000004" width="408" height="57.333333333333343"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="This is the school overview label with relatively bigger text " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J24-L9-RRt">
-                                            <rect key="frame" x="10" y="77.5" width="394" height="41"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="J24-L9-RRt">
+                                            <rect key="frame" x="10" y="77.333333333333314" width="408" height="100.66666666666669"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <string key="text">This is the school overview label with relatively bigger text This is the sThis is the school overview label with relThis is the school overview label with relatively bigger text atively bigger text chool overview label with relatively bigger text </string>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -68,33 +70,33 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3u2-mB-ME0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-791.304347826087" y="-193.52678571428569"/>
+            <point key="canvasLocation" x="107.94392523364485" y="-193.73650107991361"/>
         </scene>
         <!--School Details View Controller-->
         <scene sceneID="3UW-46-P24">
             <objects>
                 <viewController id="owV-24-vx3" customClass="SchoolDetailsViewController" customModule="NYCSchools" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="93x-sS-hau">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9l-ie-opc">
-                                <rect key="frame" x="20" y="98" width="374" height="20.5"/>
+                                <rect key="frame" x="20" y="98" width="388" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hp-hg-sVH">
-                                <rect key="frame" x="10" y="138.5" width="394" height="44"/>
+                                <rect key="frame" x="10" y="138.33333333333334" width="408" height="32"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="eyy-im-ocj">
-                                <rect key="frame" x="10" y="138.5" width="394" height="44"/>
+                                <rect key="frame" x="10" y="138.33333333333334" width="408" height="32"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bc6-sY-2TA">
-                                        <rect key="frame" x="0.0" y="0.0" width="98" height="32"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="402" height="32"/>
                                         <attributedString key="attributedText">
                                             <fragment>
                                                 <string key="content">SAT Test Takers 
@@ -116,7 +118,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="go2-DS-cKU">
-                                        <rect key="frame" x="100" y="0.0" width="98.5" height="44"/>
+                                        <rect key="frame" x="404" y="0.0" width="0.0" height="12"/>
                                         <attributedString key="attributedText">
                                             <fragment>
                                                 <string key="content">SAT Critical Reading Avg Score
@@ -138,7 +140,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVz-NS-5QA">
-                                        <rect key="frame" x="200.5" y="0.0" width="98" height="32"/>
+                                        <rect key="frame" x="406" y="0.0" width="0.0" height="12"/>
                                         <attributedString key="attributedText">
                                             <fragment>
                                                 <string key="content">SAT Math Avg Score
@@ -159,7 +161,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Np5-Dm-pAg">
-                                        <rect key="frame" x="300.5" y="0.0" width="93.5" height="44"/>
+                                        <rect key="frame" x="408" y="0.0" width="0.0" height="12"/>
                                         <attributedString key="attributedText">
                                             <fragment>
                                                 <string key="content">SAT Writing Avg Score
@@ -182,13 +184,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full school overview. Can be a very large text but should show" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4X-Ba-r3q">
-                                <rect key="frame" x="10" y="202.5" width="394" height="40.5"/>
+                                <rect key="frame" x="10" y="190.33333333333334" width="408" height="40.333333333333343"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kPq-vQ-pEr">
-                                <rect key="frame" x="10" y="253" width="394" height="16"/>
+                                <rect key="frame" x="10" y="240.66666666666666" width="408" height="15.999999999999972"/>
                                 <nil key="textColor"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -225,14 +227,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lt0-CT-YiK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="-194.19642857142856"/>
+            <point key="canvasLocation" x="900" y="-194.38444924406048"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Item-->
         <scene sceneID="y5B-yV-DrT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SWs-S0-1j5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="zPU-w3-hbV"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xe1-cp-rbp">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" name="AccentColor"/>
                     </navigationBar>
@@ -245,7 +248,24 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TY2-dK-wxw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1682" y="-193"/>
+            <point key="canvasLocation" x="-782.24299065420553" y="-193.08855291576674"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Zy1-ut-GkN">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="E2e-pG-vhf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jz6-OC-90B">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="SWs-S0-1j5" kind="relationship" relationship="viewControllers" id="KYd-Yt-CD6"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Rm-y6-kts" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1682.2429906542054" y="-193.08855291576674"/>
         </scene>
     </scenes>
     <resources>

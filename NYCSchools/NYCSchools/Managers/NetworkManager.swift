@@ -63,7 +63,7 @@ class NetworkManager {
         task?.resume()
     }
     
-    // API call using Combile's Future Publisher class
+    // API call using Combile's Future Publisher class. Just to compare how its easier and removes a lot of boilerplate code
     func makeGetRequestWithFuture<T:Decodable>(url: URL, type: T.Type) -> Future<T, Error> {
         return Future<T, Error> { promise in
             self.urlSession?.dataTaskPublisher(for: url)
