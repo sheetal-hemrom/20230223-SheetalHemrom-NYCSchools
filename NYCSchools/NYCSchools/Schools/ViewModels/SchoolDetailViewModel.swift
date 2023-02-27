@@ -47,6 +47,5 @@ class SchoolDetailViewModel {
                 self.schoolScore = scores.count > 0 ? scores.first :  nil
             }.store(in: &self.anyCancellables)
     }
-    
 }
 

@@ -103,25 +103,7 @@ class SchoolDetailsViewController: UIViewController, UITextFieldDelegate {
             Address: \(location)
             Phone Number: \(phone_number)
             """
-        
         linksTextView?.text = contactUSText
-//        linksTextView?.addLinks([
-//               website: website,
-//               email: email,
-//               phone_number: phone_number,
-//               location: location
-//           ])
-//        linksTextView?.onLinkTap = { url in
-//            // N:B URLs are currently not opening.
-//            if UIApplication.shared.canOpenURL(url){
-//                if #available(iOS 10.0, *) {
-//                    UIApplication.shared.open(url)
-//                } else {
-//                    UIApplication.shared.openURL(url)
-//                }
-//            }
-//            return true
-//           }
     }
     
     func updateScoreView() {
